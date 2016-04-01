@@ -39,6 +39,8 @@
     <Compile Include="Machines\Soil.cs" />
     <Compile Include="ExtraCraft.cs" />
     <Compile Include="Behaviour\Chevrons.cs" />
+    <Compile Include="Behaviour\ModItemManager.cs" />
+    <Compile Include="Behaviour\ModTerrainManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -48,11 +50,5 @@
       <HintPath>..\..\..\..\..\..\..\..\Program Files %28x86%29\Steam\SteamApps\common\FortressCraft\64\FC_64_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\ModdingTools\ModdingTools\ModdingTools.csproj">
-      <Project>{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}</Project>
-      <Name>ModdingTools</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

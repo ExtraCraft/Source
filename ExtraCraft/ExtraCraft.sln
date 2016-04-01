@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraCraft", "ExtraCraft.csproj", "{C5E55386-7D35-4FAF-A9C2-28E3E86CE8B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModdingTools", "..\..\..\ModdingTools\ModdingTools\ModdingTools.csproj", "{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,9 +13,5 @@ Global
 		{C5E55386-7D35-4FAF-A9C2-28E3E86CE8B9}.Debug|x86.Build.0 = Debug|x86
 		{C5E55386-7D35-4FAF-A9C2-28E3E86CE8B9}.Release|x86.ActiveCfg = Release|x86
 		{C5E55386-7D35-4FAF-A9C2-28E3E86CE8B9}.Release|x86.Build.0 = Release|x86
-		{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}.Debug|x86.Build.0 = Debug|Any CPU
-		{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}.Release|x86.ActiveCfg = Release|Any CPU
-		{CD0F6A4F-8DC1-4DDD-B212-B0FB023233CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

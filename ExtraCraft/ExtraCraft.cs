@@ -173,11 +173,7 @@ using System.Collections.Generic;
 	*/
 		#endregion
 
-		public void AddMoreTreesCraftCategory()
-		{
-			CraftingCategory spawnItemsCategory = new CraftingCategory("moretrees","Toxic Cavern Flora 6","More Trees");
-			ModCraftManager.AddNewCraftingCategory(spawnItemsCategory);
-		}
+
 
 
 
