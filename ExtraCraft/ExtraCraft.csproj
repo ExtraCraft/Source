@@ -33,7 +33,6 @@
   <ItemGroup>
     <Compile Include="Behaviour\Trees.cs" />
     <Compile Include="Machines\Fermenter.cs" />
-    <Compile Include="Machines\FirePit.cs" />
     <Compile Include="Machines\Harvester.cs" />
     <Compile Include="Machines\Planter.cs" />
     <Compile Include="Machines\Sapling.cs" />
