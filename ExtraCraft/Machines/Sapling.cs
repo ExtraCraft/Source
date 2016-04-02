@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
 using UnityEngine;
-using System.Diagnostics;
-
-
 public class Sapling : global::MachineEntity
 {
 
@@ -15,8 +12,11 @@ public class Sapling : global::MachineEntity
 
 	public float mrDelayTimer=0;
 
+	public bool mbConfiguredValue;
+
 	public Sapling(global::Segment segment, long x, long y, long z, ushort cube, byte flags, ushort lValue, bool loadFromDisk) : base(global::eSegmentEntity.ResearchAssembler,global::SpawnableObjectEnum.Alien_Plant_Toxic_6, x, y, z, cube, flags, lValue, Vector3.zero, segment)
 	{
+		mbConfiguredValue = false;
 		rand = new System.Random ();
 		PopUpText = "Waiting to growww";
 		this.mbNeedsLowFrequencyUpdate = true;
@@ -31,25 +31,26 @@ public class Sapling : global::MachineEntity
 
 	public override void UnityUpdate()
 	{
-		if (!this.mbLinkedToGO)
-		{
-			if (this.mWrapper == null || !this.mWrapper.mbHasGameObject)
-			{
+		if (!this.mbLinkedToGO) {
+			if (this.mWrapper == null || !this.mWrapper.mbHasGameObject) {
 				return;
 			}
-			if (this.mWrapper.mGameObjectList == null)
-			{
-				UnityEngine.Debug.LogError("TS missing game object #0?");
+			if (this.mWrapper.mGameObjectList == null) {
+				UnityEngine.Debug.LogError ("TS missing game object #0?");
 			}
-			if (this.mWrapper.mGameObjectList[0].gameObject == null)
-			{
-				UnityEngine.Debug.LogError("TS missing game object #0 (GO)?");
+			if (this.mWrapper.mGameObjectList [0].gameObject == null) {
+				UnityEngine.Debug.LogError ("TS missing game object #0 (GO)?");
 			}
-
+				
+			mWrapper.mGameObjectList [0].gameObject.transform.Rotate (-90f, 0, 0); 
+			mWrapper.mGameObjectList [0].gameObject.transform.localPosition =
+				new Vector3(
+					mWrapper.mGameObjectList [0].gameObject.transform.localPosition .x,
+					mWrapper.mGameObjectList [0].gameObject.transform.localPosition .y-0.5f,
+					mWrapper.mGameObjectList [0].gameObject.transform.localPosition .z);
 			this.mbLinkedToGO = true;
 		}
 	}
-
 	public override void LowFrequencyUpdate()
 	{
 
@@ -85,8 +86,6 @@ public class Sapling : global::MachineEntity
 		}
 		mrDelayTimer +=LowFrequencyThread.mrPreviousUpdateTimeStep;
 	}
-
-
 
 	public override global::HoloMachineEntity CreateHolobaseEntity(global::Holobase holobase)
 	{
