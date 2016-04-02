@@ -7,8 +7,6 @@ public class Harvester : global::MachineEntity, PowerConsumerInterface
 
 	private bool mbLinkedToGO;
 
-	private float mrUnityActiveTime;
-
 	public string PopUpString;
 
 	public float mrDelayTimer=0;
@@ -43,11 +41,7 @@ public class Harvester : global::MachineEntity, PowerConsumerInterface
 
 	private bool mbDoShootEffect;
 
-	private float mDistanceToTarget;
-
 	private float ShootEffectTimer=0;
-
-	private int mnUnityUpdates;
 
 	private float mrAimingTime;
 
@@ -55,7 +49,6 @@ public class Harvester : global::MachineEntity, PowerConsumerInterface
 
 	private float mrSpinRate;
 
-	private float SwingTimer;
 	private float mrLowPowerTime =0;
 
 	private Vector3 mVectorToTarget;
@@ -177,8 +170,7 @@ public class Harvester : global::MachineEntity, PowerConsumerInterface
 				}
 				this.mbDoShootEffect = false;
 				this.ShootEffect.SetActive(true);
-				float num = (this.mDistanceToTarget - 0.5f) / 20f;
-				this.ShootEffect.transform.localScale = new Vector3(1f, 1f, this.mDistanceToTarget / 10f);
+				this.ShootEffect.transform.localScale = new Vector3(1f, 1f, 0.5f);
 				this.ShootEffectTimer = 0.1f;
 				Debug.DrawRay(this.Turret.transform.position, this.Turret.transform.forward * 32f, Color.red, 2f);
 				Debug.DrawRay(this.Turret.transform.position, this.mVectorToTarget * 32f, Color.green, 2f);
